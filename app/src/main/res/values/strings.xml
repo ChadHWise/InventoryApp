@@ -3,4 +3,13 @@
     <string name="emailField">Enter Email</string>
     <string name="passField">Enter Password</string>
     <string name="logInButton">Log In</string>
+    <string name="update">Update Qaunity</string>
+    <string name="qty">Qty.</string>
+    <string name="productName">Name:</string>
+    <string name="enterName">Enter Name</string>
+    <string name="prodPurchPrice">Purchase Price:</string>
+    <string name="enterPurchPrice">Enter Purchase Price</string>
+    <string name="prodMatCost">Enter Material Cost:</string>
+    <string name="enterMatCost">Enter Material Cost</string>
+    <string name="prodLabCharge">Labor Charge</string>
 </resources>

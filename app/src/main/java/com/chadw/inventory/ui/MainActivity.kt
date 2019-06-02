@@ -14,8 +14,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         logInButton.setOnClickListener {
-//            var intent = Intent(this,DisplayActivity)
-            startActivity(intent)
+            startActivity(Intent(this,DisplayActivity::class.java))
         }
     }
 }
