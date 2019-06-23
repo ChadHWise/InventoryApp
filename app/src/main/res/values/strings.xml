@@ -8,8 +8,27 @@
     <string name="productName">Name:</string>
     <string name="enterName">Enter Name</string>
     <string name="prodPurchPrice">Purchase Price:</string>
-    <string name="enterPurchPrice">Enter Purchase Price</string>
-    <string name="prodMatCost">Enter Material Cost:</string>
-    <string name="enterMatCost">Enter Material Cost</string>
+    <string name="enterPurchPrice">Enter Purchase Price: </string>
+    <string name="enterMatCost">Enter Material Cost: </string>
     <string name="prodLabCharge">Labor Charge</string>
+    <string name="add">+ Add</string>
+    <string name="prodName">Enter Product Name</string>
+    <string name="price">Price Breakdown: </string>
+    <string name="descrip">Enter Description of product</string>
+    <string name="enterLabCharge">Enter Labor Charge: </string>
+    <string name="total">Total Price: </string>
+    <string name="priceHint">$0.00</string>
+    <string name="enterAskingPrice">Enter Asking Price: </string>\
+    <string name="netProfit">Net Profit: </string>
+    <string name="dimensions">Dimensions: </string>
+    <string name="enterHeight">Enter Height: </string>
+    <string name="enterWidth">Enter Width: </string>
+    <string name="enterLength">Enter Length: </string>
+    <string name="inHint">0.00 in</string>
+    <string name="category">Category: </string>
+    <string name="chooseCat">Choose Category</string>
+    <string-array name="choices">
+        <item>Bench</item>
+        <item>Table</item>
+    </string-array>
 </resources>
