@@ -1,12 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
                                              xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-                                             android:layout_height="match_parent">
+                                             android:layout_height="match_parent"
+                                             android:background="@android:color/darker_gray">
+    <android.support.v7.widget.CardView
+            android:layout_width="791dp"
+            android:layout_height="407dp"
+            app:layout_constraintBottom_toBottomOf="parent" android:layout_marginBottom="988dp"
+            app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="37dp"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="3dp"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="3dp"
+            app:layout_constraintHorizontal_bias="0.0" app:layout_constraintVertical_bias="0.0"
+    >
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-    <android.support.v7.widget.RecyclerView
-            android:layout_width="395dp"
-            android:layout_height="587dp" app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="8dp" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="8dp" app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginBottom="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"/>
+            <ImageView
+                    android:layout_width="182dp"
+                    android:layout_height="191dp" app:srcCompat="@mipmap/ic_launcher" android:id="@+id/listProdImg"
+                    android:contentDescription="@null"/>
+            <TextView
+                    android:id="@+id/listProdName"
+                    android:textColor="@android:color/black" android:textStyle="bold"
+                    android:text="@string/productName" android:textSize="58sp"
+                    android:layout_toRightOf="@id/listProdImg" android:layout_alignParentTop="true"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:layout_marginLeft="1dp"
+            />
+            <TextView
+                    android:id="@+id/listQtyHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold" android:textColor="@android:color/black"
+                    android:textSize="50sp" android:text="@string/qty"
+                    android:layout_below="@id/listProdName"
+                    android:layout_toRightOf="@id/listProdImg"
+            />
+            <TextView
+                    android:id="@+id/listProdQty"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/startQty"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold" android:textSize="50sp"
+                    android:layout_toRightOf="@id/listQtyHeader"
+                    android:layout_below="@id/listProdName"
+            />
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
 </android.support.constraint.ConstraintLayout>

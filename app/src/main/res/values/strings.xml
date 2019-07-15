@@ -27,8 +27,14 @@
     <string name="inHint">0.00 in</string>
     <string name="category">Category: </string>
     <string name="chooseCat">Choose Category</string>
+    <string name="location">Location</string>
+    <string name="chooseLoc">Choose Location</string>
+    <string name="startQty">1</string>
     <string-array name="choices">
         <item>Bench</item>
         <item>Table</item>
+    </string-array>
+    <string-array name="locations">
+        <item>Red Bird</item>
     </string-array>
 </resources>
