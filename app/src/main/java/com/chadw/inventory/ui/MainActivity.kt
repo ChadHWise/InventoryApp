@@ -1,7 +1,7 @@
 package com.chadw.inventory.ui
 
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.chadw.inventory.R
 import kotlinx.android.synthetic.main.activity_main.*

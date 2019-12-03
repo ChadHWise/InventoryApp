@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "822274703499",
+    "firebase_url": "https://inventoryapp-54ff9.firebaseio.com",
+    "project_id": "inventoryapp-54ff9",
+    "storage_bucket": "inventoryapp-54ff9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:822274703499:android:119094496466b74144d48e",
+        "android_client_info": {
+          "package_name": "com.chadw.inventory"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "822274703499-13dq1g2i16g4357nmcu1u99l8pn5n9av.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.chadw.inventory",
+            "certificate_hash": "74cded8fffda2035b109842353b7cd0d39f2dc59"
+          }
+        },
+        {
+          "client_id": "822274703499-csu2nbcsbd2em4thmjkh6emqe9m1n4vn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyASxf05IvPFi_sxmavY8DKDcHwL91gHm3w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "822274703499-csu2nbcsbd2em4thmjkh6emqe9m1n4vn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,6 +1,6 @@
 package com.chadw.inventory.ui
 
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.chadw.inventory.R
 import com.chadw.inventory.model.Item
