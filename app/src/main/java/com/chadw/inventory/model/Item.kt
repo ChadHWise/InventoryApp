@@ -13,9 +13,8 @@ class Item {
     var length: Double? = null
     var location: Location? = null
     var quantity: Int? = 1
-    var sold: Boolean? = false
 
-    fun UpdateItemInfo(itemName:String?,itemDescrip:String?,itemPurchasePrice:Double?,materialCost:Double?,laborCharge:Double?,askingPrice:Double?,category:Category?,height:Double?,width:Double?,length:Double?,location:Location?,quantity:Int?){
+    public fun UpdateItemInfo(itemName:String?,itemDescrip:String?,itemPurchasePrice:Double?,materialCost:Double?,laborCharge:Double?,askingPrice:Double?,category:Category?,height:Double?,width:Double?,length:Double?,location:Location?,quantity:Int?){
         this.itemName = itemName
         this.itemPurchasePrice = itemPurchasePrice
         this.materialCost = materialCost
@@ -41,7 +40,4 @@ class Item {
         this.quantity = updateQuan
     }
 
-    fun MarkSold(){
-        this.sold = true
-    }
 }
