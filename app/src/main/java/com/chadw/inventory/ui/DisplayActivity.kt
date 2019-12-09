@@ -1,28 +1,108 @@
 package com.chadw.inventory.ui
 
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
+import android.widget.EditText
 import com.chadw.inventory.R
 import com.chadw.inventory.model.Item
+import com.pawegio.kandroid.textWatcher
 import kotlinx.android.synthetic.main.activity_display.*
+import org.w3c.dom.Text
 
 class DisplayActivity : AppCompatActivity() {
+
+    val tWatcher = object : TextWatcher {
+        override fun afterTextChanged(s: Editable?) {
+            updateTotalCost()
+            updateNetProfit()
+        }
+
+        override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+        }
+
+        override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_display)
 
+        purchPriceField.addTextChangedListener(this.tWatcher)
+        matPriceField.addTextChangedListener(this.tWatcher)
+        laborChargeField.addTextChangedListener(this.tWatcher)
+        askingPriceField.addTextChangedListener(this.tWatcher)
+
+        purchPriceField.setOnFocusChangeListener { v, hasFocus -> updateFieldString(v as EditText) }
+        matPriceField.setOnFocusChangeListener { v, hasFocus -> updateFieldString(v as EditText) }
+        laborChargeField.setOnFocusChangeListener { v, hasFocus -> updateFieldString(v as EditText) }
+        askingPriceField.setOnFocusChangeListener { v, hasFocus -> updateFieldString(v as EditText) }
+
+
     }
-    fun updateNetProfit(){
-       var profit: Double? = null
-        profit = askingPriceField.text.toString().toDouble() - totalPriceField.text.toString().toDouble()
-        val profitString :String = "$" + profit.toString()
+
+    fun updateNetProfit() {
+        var totalPrice = 0.0
+        var askingPrice = 0.0
+
+        val totalPriceString = totalPriceField.text.toString()
+        if (totalPriceString.isNotEmpty()) {
+            totalPrice = totalPriceString.substringAfter("$").toDouble()
+        }
+
+        val askingPriceString = askingPriceField.text.toString()
+        if (askingPriceString.isNotEmpty()) {
+            askingPrice = askingPriceString.substringAfter("$").toDouble()
+        }
+        val profit = askingPrice - totalPrice
+        if (profit < 0) {
+            netProfitField.setTextColor(Color.parseColor("#ff0000"))
+        } else {
+            netProfitField.setTextColor(Color.parseColor("#000000"))
+        }
+        val profitString = "$%.2f".format(profit)
         netProfitField.setText(profitString)
     }
-    fun updateTotalCost(){
-        var totalCost: Double? = null
-        totalCost = purchPriceField.text.toString().toDouble() + matPriceField.text.toString().toDouble() + laborChargeField.text.toString().toDouble()
-        val totalCostString = "$" + totalCost.toString()
+
+    private fun updateTotalCost() {
+        var purchPrice = 0.0
+        var matPrice = 0.0
+        var laborPrice = 0.0
+
+        val purchPriceString = purchPriceField.text.toString()
+        if (!purchPriceString.isEmpty()) {
+            purchPrice = purchPriceString.substringAfter("$").toDouble()
+        }
+
+        val matPriceString = matPriceField.text.toString()
+        if (!matPriceString.isEmpty()) {
+            matPrice = matPriceString.substringAfter("$").toDouble()
+        }
+
+        val laborPriceString = laborChargeField.text.toString()
+        if (!laborPriceString.isEmpty()) {
+            laborPrice = laborPriceString.substringAfter("$").toDouble()
+        }
+
+        val totalCost = purchPrice + matPrice + laborPrice
+        val totalCostString = "$%.2f".format(totalCost)
         totalPriceField.setText(totalCostString)
+
+
+    }
+
+    private fun updateFieldString(e: EditText) {
+        val string = e.text.toString()
+        if (string.isEmpty()) {
+            return
+        }
+        if (string.contains("$")) {
+            return
+        }
+        val amount = string.substringAfter("$").toDouble()
+        e.setText("$%.2f".format(amount))
     }
 }
