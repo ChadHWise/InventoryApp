@@ -14,32 +14,15 @@ import org.w3c.dom.Text
 
 class DisplayActivity : AppCompatActivity() {
 
-    val tWatcher = object : TextWatcher {
-        override fun afterTextChanged(s: Editable?) {
-            updateTotalCost()
-            updateNetProfit()
-        }
-
-        override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-        }
-
-        override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-        }
-    }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_display)
 
-        purchPriceField.addTextChangedListener(this.tWatcher)
-        matPriceField.addTextChangedListener(this.tWatcher)
-        laborChargeField.addTextChangedListener(this.tWatcher)
-        askingPriceField.addTextChangedListener(this.tWatcher)
 
-        purchPriceField.setOnFocusChangeListener { v, hasFocus -> updateFieldString(v as EditText) }
-        matPriceField.setOnFocusChangeListener { v, hasFocus -> updateFieldString(v as EditText) }
-        laborChargeField.setOnFocusChangeListener { v, hasFocus -> updateFieldString(v as EditText) }
-        askingPriceField.setOnFocusChangeListener { v, hasFocus -> updateFieldString(v as EditText) }
+        purchPriceField.setOnFocusChangeListener { v, hasFocus -> updateFieldString(v as EditText);updateTotalCost();updateNetProfit()}
+        matPriceField.setOnFocusChangeListener { v, hasFocus -> updateFieldString(v as EditText);updateTotalCost();updateNetProfit() }
+        laborChargeField.setOnFocusChangeListener { v, hasFocus -> updateFieldString(v as EditText);updateTotalCost();updateNetProfit() }
+        askingPriceField.setOnFocusChangeListener { v, hasFocus -> updateFieldString(v as EditText);updateTotalCost();updateNetProfit() }
 
 
     }
